@@ -29,13 +29,13 @@ export const fetchMoviesById = async id => {
 };
 
 export const fetchCastMovies = async id => {
-  console.log(id);
+  // console.log(id);
   const { data } = await moviesApiClient.get(`/movie/${id}/credits`);
   return data;
 };
 
-// export const fetchRewiesMovies = async id => {
-//   const { data } = await moviesApiClient.get(`
-// /movie/${id}/reviews`);
-//   return data;
-// };
+export const fetchRewiesMovies = async id => {
+  const { data } = await moviesApiClient.get(`
+/movie/${id}/reviews`);
+  return data;
+};

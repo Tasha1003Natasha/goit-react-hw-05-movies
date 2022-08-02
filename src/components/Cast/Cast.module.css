@@ -1,0 +1,26 @@
+.list {
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+  margin-left: -20px;
+  margin-top: -20px;
+  margin-bottom: 20px;
+}
+
+.item {
+  margin-left: 20px;
+  margin-top: 20px;
+}
+
+.img {
+  display: block;
+  height: 300px;
+  min-width: 200px;
+}
+
+.text {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #303f9f;
+}

@@ -8,6 +8,8 @@ export const MoviesPage = () => {
   const [query, setQuery] = useState('');
   // const [page, setPage] = useState(1);
   const [moviesList, setMoviesList] = useState([]);
+  const [error, setError] = useState('');
+  const [loading, setLoading] = useState(false);
 
   const handleSubmit = value => {
     setQuery(value);
@@ -18,18 +20,29 @@ export const MoviesPage = () => {
     if (query === '') {
       return;
     }
-    const getMovies = () => {
-      fetchSearchMovies(query).then(({ results }) => setMoviesList(results));
+    const getMovies = async () => {
+      try {
+        setLoading(true);
+        const { results } = await fetchSearchMovies(query);
+        setMoviesList(results);
+      } catch (error) {
+        setError('Ooops. Something went wrong...');
+      } finally {
+        setLoading(false);
+      }
     };
     getMovies();
   }, [query]);
 
-  console.log(moviesList);
   return (
     <>
-      <Moviesgallery movies={moviesList} />
+      {loading && 'Loading ...'}
+      {error && <div>{error}</div>}
       <SearchForm onSubmit={handleSubmit} />
+      <Moviesgallery movies={moviesList} />
       <Outlet />
     </>
   );
 };
+
+
