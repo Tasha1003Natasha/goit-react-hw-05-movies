@@ -1,10 +1,11 @@
 import PropTypes from 'prop-types';
+import styles from '../Reviews/Reviews.module.css';
 
 export const Review = ({ author, content }) => {
   return (
     <div>
-      <b>{author}</b>
-      <p>{content}</p>
+      <b className={styles.text}>{author}</b>
+      <p className={styles.title}>{content}</p>
     </div>
   );
 };

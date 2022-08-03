@@ -14,18 +14,20 @@
 
 .nav_item {
   margin-right: 20px;
+  font-size: 20px;
 }
 
 .nav_link {
   display: block;
   text-decoration: none;
+  list-style: none;
 }
 
 .nav_link:hover,
 .nav_link:focus {
-  color: #ffd700;
+  color: #0000ff;
 }
 
 .nav_link_active {
-  color: blue;
+  color: #0000ff;
 }

@@ -4,7 +4,7 @@ import { Outlet } from 'react-router';
 import { fetchSearchMovies } from 'service/service';
 import { SearchForm } from 'components/SearchForm/SearchForm';
 
-export const MoviesPage = () => {
+const MoviesPage = () => {
   const [query, setQuery] = useState('');
   // const [page, setPage] = useState(1);
   const [moviesList, setMoviesList] = useState([]);
@@ -45,4 +45,4 @@ export const MoviesPage = () => {
   );
 };
 
-
+export default MoviesPage;

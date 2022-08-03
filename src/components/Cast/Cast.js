@@ -37,7 +37,7 @@ export const Cast = () => {
                   src={
                     element.profile_path
                       ? `https://image.tmdb.org/t/p/w500${element.profile_path}`
-                      : `https://howfix.net/wp-content/uploads/2018/02/sIaRmaFSMfrw8QJIBAa8mA-article.png`
+                      : `https://защитныетенты.рф/kernel/preview.php?file=shop/goods/nophoto.jpg&width=400&height=300&method=add`
                   }
                   alt={`${element.title} portrait`}
                   className={styles.img}

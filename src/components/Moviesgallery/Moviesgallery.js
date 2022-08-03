@@ -10,13 +10,15 @@ export const Moviesgallery = ({ movies }) => {
         movies.map(element => (
           <li key={element.id} className={styles.item}>
             <Link to={`/movies/${element.id}`} className={styles.link}>
-              {element.title || element.name || element.original_title}
+              <p className={styles.name}>
+                {element.title || element.name || element.original_title}
+              </p>
               <img
                 width="400"
                 src={
                   element.poster_path
                     ? `https://image.tmdb.org/t/p/w500${element.poster_path}`
-                    : `https://howfix.net/wp-content/uploads/2018/02/sIaRmaFSMfrw8QJIBAa8mA-article.png`
+                    : `https://защитныетенты.рф/kernel/preview.php?file=shop/goods/nophoto.jpg&width=400&height=300&method=add`
                 }
                 alt={element.title}
                 className={styles.img_gallary}

@@ -2,11 +2,14 @@ import { fetchRewiesMovies } from 'service/service';
 import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import { Review } from 'components/Review/Review';
+import styles from '../Reviews/Reviews.module.css';
+
 // import PropTypes from 'prop-types';
 
 export const Reviews = () => {
   const [reviews, setReviews] = useState([]);
   const { movieId } = useParams();
+  // console.log(movieId);
   const [error, setError] = useState('');
   const [loading, setLoading] = useState(false);
 
@@ -27,17 +30,20 @@ export const Reviews = () => {
     getReviews();
   }, [movieId]);
 
-  console.log(reviews);
   return (
     <>
       {loading && 'Loading...'}
 
       {reviews?.length ? (
-        <ul>
+        <ul className={styles.list}>
           {reviews.map(element => {
             return (
               <li key={element.id}>
-                <Review author={element.author} content={element.content} />
+                <Review
+                  author={element.author}
+                  content={element.content}
+                  className={styles.item}
+                />
               </li>
             );
           })}
@@ -49,7 +55,3 @@ export const Reviews = () => {
     </>
   );
 };
-
-// Reviews.propTypes = {
-//   reviews: PropTypes.object.isRequired,
-// };

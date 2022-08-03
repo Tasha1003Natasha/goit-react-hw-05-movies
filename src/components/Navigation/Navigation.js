@@ -15,7 +15,7 @@ export const Navigation = () => {
             Home
           </NavLink>
         </li>
-        <li>
+        <li className={styles.nav_item}>
           <NavLink
             to="/movies"
             className={({ isActive }) =>

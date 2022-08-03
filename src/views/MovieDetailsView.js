@@ -8,7 +8,7 @@ import {
 } from 'react-router-dom';
 import styles from '../views/views.module.css';
 
-export const MovieDetailsView = () => {
+const MovieDetailsView = () => {
   const location = useLocation();
   // console.log(location);
   const { movieId } = useParams();
@@ -62,3 +62,5 @@ export const MovieDetailsView = () => {
     </>
   );
 };
+
+export default MovieDetailsView;
