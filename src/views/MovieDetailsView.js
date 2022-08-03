@@ -49,11 +49,11 @@ const MovieDetailsView = () => {
             {movie.genres?.map(genres => genres.name).join(' , ')}
           </p>
 
-          <NavLink to={`/movies/${movieId}/cast`}>
+          <NavLink state={{ from: location }} to={`/movies/${movieId}/cast`}>
             <p className={styles.link}>Cast</p>
           </NavLink>
 
-          <NavLink to={`/movies/${movieId}/reviews`}>
+          <NavLink state={{ from: location }} to={`/movies/${movieId}/reviews`}>
             <p className={styles.link}>Reviews</p>
           </NavLink>
           <Outlet />
