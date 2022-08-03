@@ -9,7 +9,6 @@ import styles from '../Reviews/Reviews.module.css';
 export const Reviews = () => {
   const [reviews, setReviews] = useState([]);
   const { movieId } = useParams();
-  // console.log(movieId);
   const [error, setError] = useState('');
   const [loading, setLoading] = useState(false);
 
@@ -19,7 +18,6 @@ export const Reviews = () => {
       try {
         setLoading(true);
         const { results } = await fetchRewiesMovies(movieId);
-        // console.log(results);
         setReviews(results);
       } catch (error) {
         setError('Ooops. Something went wrong...');

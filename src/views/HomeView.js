@@ -24,7 +24,6 @@ const HomeView = () => {
     getMovies();
   }, []);
 
-  // console.log(moviesList);
   return (
     <>
       {loading && 'Loading ...'}

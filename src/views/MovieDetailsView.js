@@ -10,12 +10,9 @@ import styles from '../views/views.module.css';
 
 const MovieDetailsView = () => {
   const location = useLocation();
-  // console.log(location);
   const { movieId } = useParams();
   const navigate = useNavigate();
   const movie = useFetchMoviesById();
-  // console.log(movie);
-  console.log(location.state);
 
   return (
     <>

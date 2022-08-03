@@ -19,7 +19,6 @@ export const useFetchMoviesById = () => {
     };
     getMovies();
   }, [movieId]);
-  // console.log(movie);
 
   return movie;
 };
