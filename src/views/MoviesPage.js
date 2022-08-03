@@ -1,23 +1,26 @@
 import { useEffect, useState } from 'react';
 import { Moviesgallery } from 'components/Moviesgallery/Moviesgallery';
-import { Outlet } from 'react-router';
+import { Outlet, useSearchParams } from 'react-router-dom';
 import { fetchSearchMovies } from 'service/service';
 import { SearchForm } from 'components/SearchForm/SearchForm';
 
 const MoviesPage = () => {
-  const [query, setQuery] = useState('');
+  const [searchParams, setSearchParams] = useSearchParams();
+  const query = searchParams.get('query');
+  // const [query, setQuery] = useState('');
   // const [page, setPage] = useState(1);
   const [moviesList, setMoviesList] = useState([]);
   const [error, setError] = useState('');
   const [loading, setLoading] = useState(false);
 
   const handleSubmit = value => {
-    setQuery(value);
+    // setQuery(value);
+    setSearchParams({ query: value });
     // setPage(1);
   };
 
   useEffect(() => {
-    if (query === '') {
+    if (!query) {
       return;
     }
     const getMovies = async () => {

@@ -4,6 +4,7 @@ import styles from '../Moviesgallery/Moviesgallery.module.css';
 
 export const Moviesgallery = ({ movies }) => {
   const location = useLocation();
+  console.log(location.state);
 
   // console.log({ movies });
   return (
