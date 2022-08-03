@@ -1,9 +1,7 @@
 .list {
   display: flex;
-  flex-direction: column;
+  flex-wrap: wrap;
   list-style: none;
-  margin-left: -20px;
-  margin-top: -20px;
   padding: 20px 0;
   align-items: center;
 }
@@ -11,6 +9,7 @@
 .item {
   margin-left: 40px;
   margin-top: 10px;
+  margin-bottom: 10px;
 }
 
 .link {
@@ -21,4 +20,9 @@
 .link:hover,
 .link:focus {
   color: blue;
+}
+
+.img_gallary {
+  display: flex;
+  flex-direction: column;
 }

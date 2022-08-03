@@ -13,7 +13,6 @@ export const MovieDetailsView = () => {
   // console.log(location);
   const { movieId } = useParams();
   const navigate = useNavigate();
-
   const movie = useFetchMoviesById();
   // console.log(movie);
 
@@ -51,11 +50,11 @@ export const MovieDetailsView = () => {
           </p>
 
           <NavLink to={`/movies/${movieId}/cast`}>
-            <p>Cast</p>
+            <p className={styles.link}>Cast</p>
           </NavLink>
 
           <NavLink to={`/movies/${movieId}/reviews`}>
-            <p>Reviews</p>
+            <p className={styles.link}>Reviews</p>
           </NavLink>
           <Outlet />
         </div>

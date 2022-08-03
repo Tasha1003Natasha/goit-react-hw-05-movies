@@ -4,7 +4,7 @@ import { useParams } from 'react-router-dom';
 import { Review } from 'components/Review/Review';
 // import PropTypes from 'prop-types';
 
-export const Reviews = async () => {
+export const Reviews = () => {
   const [reviews, setReviews] = useState([]);
   const { movieId } = useParams();
   const [error, setError] = useState('');
@@ -16,8 +16,7 @@ export const Reviews = async () => {
       try {
         setLoading(true);
         const { results } = await fetchRewiesMovies(movieId);
-
-        console.log(results);
+        // console.log(results);
         setReviews(results);
       } catch (error) {
         setError('Ooops. Something went wrong...');

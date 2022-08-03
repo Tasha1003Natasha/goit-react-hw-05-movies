@@ -11,6 +11,16 @@ export const Moviesgallery = ({ movies }) => {
           <li key={element.id} className={styles.item}>
             <Link to={`/movies/${element.id}`} className={styles.link}>
               {element.title || element.name || element.original_title}
+              <img
+                width="400"
+                src={
+                  element.poster_path
+                    ? `https://image.tmdb.org/t/p/w500${element.poster_path}`
+                    : `https://howfix.net/wp-content/uploads/2018/02/sIaRmaFSMfrw8QJIBAa8mA-article.png`
+                }
+                alt={element.title}
+                className={styles.img_gallary}
+              />
             </Link>
           </li>
         ))}
