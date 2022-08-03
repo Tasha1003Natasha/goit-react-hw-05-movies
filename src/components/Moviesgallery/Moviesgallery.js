@@ -18,7 +18,7 @@ export const Moviesgallery = ({ movies }) => {
                 src={
                   element.poster_path
                     ? `https://image.tmdb.org/t/p/w500${element.poster_path}`
-                    : `https://защитныетенты.рф/kernel/preview.php?file=shop/goods/nophoto.jpg&width=400&height=300&method=add`
+                    : `https://s1.hostingkartinok.com/uploads/images/2022/07/40ceaea2e22257d2a139ca5a0c0b8ba9.jpg`
                 }
                 alt={element.title}
                 className={styles.img_gallary}

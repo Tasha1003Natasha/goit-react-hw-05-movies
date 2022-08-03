@@ -4,6 +4,7 @@
   list-style: none;
   padding: 20px 0;
   align-items: center;
+  margin-left: -40px;
 }
 
 .item {
@@ -25,6 +26,8 @@
 .img_gallary {
   display: flex;
   flex-direction: column;
+  width: 400px;
+  height: 600px;
 }
 
 .name {
