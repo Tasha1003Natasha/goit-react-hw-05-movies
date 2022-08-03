@@ -29,7 +29,7 @@ export const Cast = () => {
       {loading && 'Loading...'}
       {error && <div>{error}</div>}
       <ul className={styles.list}>
-        {actors &&
+        {Boolean(actors?.length) &&
           actors.map(element => {
             return (
               <li key={element.id} className={styles.item}>

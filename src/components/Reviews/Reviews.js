@@ -12,11 +12,12 @@ export const Reviews = async () => {
 
   useEffect(() => {
     const getReviews = async () => {
-      //   fetchRewiesMovies(movieId).then(({ results }) => setReviews(results));
-      setLoading(true);
+      // fetchRewiesMovies(movieId).then(({ results }) => setReviews(results));
       try {
+        setLoading(true);
         const { results } = await fetchRewiesMovies(movieId);
-        // console.log(results);
+
+        console.log(results);
         setReviews(results);
       } catch (error) {
         setError('Ooops. Something went wrong...');
@@ -27,25 +28,24 @@ export const Reviews = async () => {
     getReviews();
   }, [movieId]);
 
+  console.log(reviews);
   return (
     <>
       {loading && 'Loading...'}
 
-      {reviews ? (
+      {reviews?.length ? (
         <ul>
-          {reviews &&
-            reviews.map(element => {
-              return (
-                <li key={element.id}>
-                  <Review author={element.author} content={element.content} />
-                </li>
-              );
-            })}
+          {reviews.map(element => {
+            return (
+              <li key={element.id}>
+                <Review author={element.author} content={element.content} />
+              </li>
+            );
+          })}
         </ul>
       ) : (
         <p>We don't have any reviews for this movie</p>
       )}
-
       {error && <div>{error}</div>}
     </>
   );

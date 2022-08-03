@@ -7,10 +7,7 @@ export const HomeView = () => {
   const [moviesList, setMoviesList] = useState([]);
 
   useEffect(() => {
-    const getMovies = () => {
       fetchMovies().then(({ results }) => setMoviesList(results));
-    };
-    getMovies();
   }, []);
 
   // console.log(moviesList);
